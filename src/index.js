@@ -6,39 +6,15 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
 
-
-
-const Fn = props => {
-
-  const element = (
-    <div>
-      <h1>Hello , {props.name}</h1>
-      <p>Your age is {props.age}</p>
-    </div> 
-);
-
-    ReactDOM.render(
-      element,
-      document.getElementById('root')
-    )
+const Fn = (props)=>{
+  return <h1>Hello , {props.name}</h1>
 }
 
-const Tm = () => {
+const element = <Fn name="Dilum"/>
 
-      const Ti = <p>{new Date().toLocaleTimeString()}</p>
-    
-      ReactDOM.render(
-        Ti,
-        document.getElementById('time')
-      )
-    }
-
-Fn("Dlum Harshana" , 23)   
-setInterval(Tm ,1000);
-
-
-
-
-
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+)
 
 reportWebVitals();
