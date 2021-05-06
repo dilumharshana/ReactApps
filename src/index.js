@@ -1,20 +1,21 @@
 
-
 import React from 'react';
 import reactDom from 'react-dom';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
 
-const Fn = (props)=>{
-  return <h1>Hello , {props.name}</h1>
-}
 
-const element = <Fn name="Dilum"/>
+const Mny = (props) => {
+  return(<div><h1>{props.total}</h1></div>)
+};
+
+
 
 ReactDOM.render(
-  element,
+  <Mny total="a"/>,
   document.getElementById('root')
 )
+
 
 reportWebVitals();
