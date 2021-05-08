@@ -1,102 +1,26 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
+import App from "./App";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Test from "./test";
+import Test2 from "./test2";
 
-import React from 'react';
-import reactDom from 'react-dom';
-import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
+ReactDOM.render(
+  <App>
+    <Router>
+      <Switch>
+        <React.Fragment>
+          <Route exact path="/" component={Test} />
+          <Route path="/t2" component={Test2} />
+        </React.Fragment>
+      </Switch>
+    </Router>
+  </App>,
+  document.getElementById("root")
+);
 
-
-
-// class Welcome{
-
-//   Constructor(name){
-//     this.name = name
-//   }
-
-//   render(){
-//     return <h1>Hello {this.name}</h1>
-//   }
-
-// }
-
-// const element = new Welcome("dilum").render();
-
-// function Name(...props){
-//   return <h1>Hello {props[1]}</h1>
-// }
-
-// const element = new Name("nissan" , "r 34");
-
-
-// const Clock = (props)=>{
-//   setInterval(start,1000);
-//   return(
-//     <div>
-//       <p>Time is now : </p>
-//       <p>{new Date().toLocaleTimeString()}</p>
-//     </div>
-//   )
-    
-  
-// }
-
-// function start(){
-
-//   ReactDOM.render(
-//     < Clock />,
-//     document.getElementById('root')
-//   )
-// }
-
-// start();
-
-class Clock extends React.Component{
-
-  constructor(props){
-    super(props);
-    this.state = {time:new Date() , dev:"dilum"};
-  }
-
- 
-  componentDidMount(){
-     this.tid = setInterval(()=> this.tick() , 1000)
-  }
-
-  componentWillUnmount(){
-      clearInterval(this.tid)
-  }
-
-  tick(){
-    this.setState(
-      {
-        time: new Date()
-      }
-    );
-  }
-
-  render(){
-   return(
-    <div>
-      <p>Time is now :</p>
-      <p>{this.state.time.toLocaleTimeString()} {this.state.dev}</p>
-    </div>
-   )
-  }
-
-  
-
-}
-
-
-
-function start(){
-  ReactDOM.render(
-  <Clock/>,
-  document.getElementById('root')
-)
-}
-
-setInterval(start,1000)
-
-
-
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

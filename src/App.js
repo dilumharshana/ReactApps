@@ -1,15 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import "./App.css";
 
+class App extends React.Component {
 
-function na(){
-
-
-  return (
-    
-    <h1>Started React</h1>
-  )
+  render() {
+    return <div>{this.props.children}</div>;
+  }
 }
 
-export default na;
-
+export default App;
