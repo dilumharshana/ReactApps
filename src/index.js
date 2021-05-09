@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Btn from "./test";
+import Header from "./test";
 import Test2 from "./test2";
 
 ReactDOM.render(
@@ -11,8 +11,9 @@ ReactDOM.render(
     <Router>
       <Switch>
         <React.Fragment>
-          <Route exact path="/" component={Btn} />
-          <Route path="/t2" component={Test2} />
+          {/* <Route exact path="/" component={Header}  user="true" name="dilum"/>
+          <Route path="/t2" component={Test2} /> */}
+          <Header user="true" name="Dilum Harshana"/>
         </React.Fragment>
       </Switch>
     </Router>

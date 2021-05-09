@@ -14,23 +14,27 @@ import React, { Component, Fragment } from "react";
 
 // };
 
-class  Btn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
 
-    this.action = this.action.bind(this);
+function Header(props){
+
+  function Newuser(props){
+    return <h1>Sign Up to continue !</h1>
+  }
+  
+  function Existing(props){
+    return <h1>Hello  Welcom Back {props.name} !</h1>
   }
 
+  
+  if(props.user == "true"){
 
-  action(){
-    console.log(this);
+    return <Existing  name = {props.name}/>
+  }
+  else{
+    return <Newuser/>
   }
 
-  render() { 
-    return ( <button onClick={this.action}>HELLO CLICK ME</button> );
-  }
 }
  
 
-export default Btn;
+export default Header;
