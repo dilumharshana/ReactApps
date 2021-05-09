@@ -1,18 +1,36 @@
 import React, { Component, Fragment } from "react";
-import Test2 from "./test2";
+// import ClockDisplay from "./test2";
 
-class Test extends Component {
+// const Btn = () => {
+
+//   const action = (e)=>{
+//     e.preventDefault();
+//     console.log("Fierd");
+//   }
+  
+//   return <button onClick={action} >Click me</button>;
+
+ 
+
+// };
+
+class  Btn extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {  }
+
+    this.action = this.action.bind(this);
   }
-  render() {
-    return (
-      <Fragment>
-        <Test2 name="Dilum" />
-      </Fragment>
-    );
+
+
+  action(){
+    console.log(this);
+  }
+
+  render() { 
+    return ( <button onClick={this.action}>HELLO CLICK ME</button> );
   }
 }
+ 
 
-export default Test;
+export default Btn;

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
-class Test2 extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { age: 23 , car:"honda civic" , company: "Virtusa"};
-  }
+class ClockDisplay extends React.Component {
 
-  render() {
-    return <div> Name : {this.props.name} {this.state.age} car: {this.state.car} company: {this.state.company}</div>;
-  }
+    render() {
+      return (
+        <div>
+          <h1>Time is : {this.props.time}</h1>
+        </div>
+      )
+    }
 }
 
-export default Test2;
+export default ClockDisplay;
