@@ -6,14 +6,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./test";
 import Test2 from "./test2";
 
+
 ReactDOM.render(
   <App>
     <Router>
       <Switch>
         <React.Fragment>
-          {/* <Route exact path="/" component={Header}  user="true" name="dilum"/>
-          <Route path="/t2" component={Test2} /> */}
-          <Header user="true" name="Dilum Harshana"/>
+
+          <Header numbers={[1,2,3,4,5,6,]}/>
+
         </React.Fragment>
       </Switch>
     </Router>
