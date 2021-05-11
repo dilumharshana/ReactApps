@@ -3,8 +3,13 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from "./test";
-import Test2 from "./test2";
+import Itemlist from "./test";
+// import Test2 from "./test2";
+
+const posts = [
+  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+];
 
 
 ReactDOM.render(
@@ -13,7 +18,7 @@ ReactDOM.render(
       <Switch>
         <React.Fragment>
 
-          <Header numbers={[1,2,3,4,5,6,]}/>
+          <Itemlist posts={posts}/>
 
         </React.Fragment>
       </Switch>

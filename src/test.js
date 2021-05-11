@@ -1,19 +1,45 @@
 import React, { Component, Fragment } from "react";
+import Item from './test2'
 
-function Header(props){
+function Itemlist(props){
 
-    const numbers = props.numbers;
+    const titles = <ul> {props.posts.map( post => <li key={post.id}>{post.title}</li>)} </ul>;
 
-    const li = numbers.map( num => {
-    
-      return  <li key={props.numbers.indexOf(num)}>{num}</li>
+    const psts = props.posts.map( post => {
+
+        return (
+            <div key={post.id}> 
+            <h1>
+                {post.title}
+                
+            </h1>
+            <p>
+                {post.content}
+            </p>
         
-    } )
+        </div>
+        )
 
-    return <ul>{li}</ul>;
+    })
+
+    console.log(titles);
+    console.log(psts);
+
+    return (
+
+
+        <div>
+
+            {titles}
+
+           {psts}
+
+        </div>
+    )
+
 }
 
 
  
 
-export default Header;
+export default Itemlist;

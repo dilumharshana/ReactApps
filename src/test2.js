@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 
-class ClockDisplay extends React.Component {
+function Item(props){
 
-    render() {
-      return (
-        <div>
-          <h1>Time is : {this.props.time}</h1>
-        </div>
-      )
-    }
+    return <li>{props.item}</li>
 }
 
-export default ClockDisplay;
+
+export default Item;
