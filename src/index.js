@@ -6,10 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Itemlist from "./test";
 // import Test2 from "./test2";
 
-const posts = [
-  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
-];
+const nl =[1,2,5,4,7,9,6,3,5,84]
 
 
 ReactDOM.render(
@@ -18,7 +15,7 @@ ReactDOM.render(
       <Switch>
         <React.Fragment>
 
-          <Itemlist posts={posts}/>
+          <Itemlist numbers={nl}/>
 
         </React.Fragment>
       </Switch>

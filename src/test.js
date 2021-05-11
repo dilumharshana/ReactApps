@@ -3,38 +3,23 @@ import Item from './test2'
 
 function Itemlist(props){
 
-    const titles = <ul> {props.posts.map( post => <li key={post.id}>{post.title}</li>)} </ul>;
+    const numbers = props.numbers;
 
-    const psts = props.posts.map( post => {
+    return(
 
-        return (
-            <div key={post.id}> 
-            <h1>
-                {post.title}
-                
-            </h1>
-            <p>
-                {post.content}
-            </p>
+        <ul>
+            {
+                numbers.map( number=> {
+
+                      return  <Item key={(number)} item={number}/>
+                    
+                })
+
+            }
+
+        </ul>
         
-        </div>
-        )
 
-    })
-
-    console.log(titles);
-    console.log(psts);
-
-    return (
-
-
-        <div>
-
-            {titles}
-
-           {psts}
-
-        </div>
     )
 
 }
