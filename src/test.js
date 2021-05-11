@@ -4,7 +4,11 @@ function Header(props){
 
     const numbers = props.numbers;
 
-    const li = numbers.map( num => <li>{num}</li> )
+    const li = numbers.map( num => {
+    
+      return  <li key={props.numbers.indexOf(num)}>{num}</li>
+        
+    } )
 
     return <ul>{li}</ul>;
 }
