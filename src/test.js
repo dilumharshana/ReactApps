@@ -32,7 +32,7 @@ class Form extends React.Component{
                         Name :
                     </label>
 
-                    <input type="text" value={this.state.value} onChange={this.change} />
+                    <textarea name="" id="" cols="30" rows="10"  value={this.state.value} onChange={this.change}></textarea>
 
                     <input type="submit"/>
 
