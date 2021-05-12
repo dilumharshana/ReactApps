@@ -1,30 +1,49 @@
 import React, { Component, Fragment } from "react";
 import Item from './test2'
 
-function Itemlist(props){
 
-    const numbers = props.numbers;
+class Form extends React.Component{
 
-    return(
+    constructor(props){
+        super(props);
 
-        <ul>
-            {
-                numbers.map( number=> {
+        this.state = {value:''};
 
-                      return  <Item key={(number)} item={number}/>
-                    
-                })
+        this.change = this.change.bind(this);
+        this.submit =this.submit.bind(this);
+    }
 
-            }
+    change(event){
+        this.setState( {value : event.target.value} );
+        console.log(event.target.value);
+    }
 
-        </ul>
-        
+    submit(event){
+        alert(`Hey ${this.state.value} welcome to Symphany :()`);
+    }
 
-    )
+    render(){
 
+        return(
+
+            <form onSubmit={this.submit}>
+                
+                    <label htmlFor="">
+                        Name :
+                    </label>
+
+                    <input type="text" value={this.state.value} onChange={this.change} />
+
+                    <input type="submit"/>
+
+            </form>
+
+        )
+
+    }
 }
 
 
  
 
-export default Itemlist;
+export default Form;

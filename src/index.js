@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Itemlist from "./test";
+import Form from "./test";
 // import Test2 from "./test2";
 
 const nl =[1,2,5,4,7,9,6,3,5,84]
@@ -15,7 +15,7 @@ ReactDOM.render(
       <Switch>
         <React.Fragment>
 
-          <Itemlist numbers={nl}/>
+          <Form/>
 
         </React.Fragment>
       </Switch>
