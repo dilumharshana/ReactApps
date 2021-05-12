@@ -7,39 +7,26 @@ class Form extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {value:''};
+        this.state = {value:''}
 
-        this.change = this.change.bind(this);
-        this.submit =this.submit.bind(this);
     }
-
-    change(event){
-        this.setState( {value : event.target.value} );
-        console.log(event.target.value);
-    }
-
-    submit(event){
-        alert(`Hey ${this.state.value} welcome to Symphany :()`);
-    }
-
+    
     render(){
 
-        return(
+        this.render(
 
-            <form onSubmit={this.submit}>
-                
-                    <label htmlFor="">
-                        Name :
-                    </label>
+            <div>
+                <form onSubmit={this.submit}>
+                <select name="phone" id="">
 
-                    <textarea name="" id="" cols="30" rows="10"  value={this.state.value} onChange={this.change}></textarea>
+                    <option value={this.props.value} name="s20">Samsung s20</option>
+                    <option value={this.props.value} name="11max" >Iphone 11</option>
 
-                    <input type="submit"/>
-
-            </form>
+                    </select>
+                                    </form>
+            </div>
 
         )
-
     }
 }
 
