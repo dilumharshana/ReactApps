@@ -5,22 +5,25 @@ class Form extends React.Component{
 
     constructor(props){
 
-      super(props){
+      super(props);
 
-        this.state = {value:''};
+        this.state = {name:'' , email:'', passcode:''};
 
         this.submit = this.submit.bind(this);
         this.changeValue = this.changeValue.bind(this);
       }
-    }
+    
 
-    changeValue(event){
+      changeValue(event){
 
-      this.setState( {value:event.target.value});
-    }
+        const name = event.target.name;
+        this.setState( {[name]:event.target.value})
+      }
 
     submit(){
-      alert(`Hello ${this.state.value} , please chek your gmail inbox to confirm your email !`);
+
+      const br = <br />
+      alert(`Hello ${this.state.name} ,  your email is ${this.state.email} and remember your passcode is ${this.state.passcode}`);
     }
 
 
@@ -33,7 +36,10 @@ class Form extends React.Component{
             User Name:
           </label>
 
-          <input type="text" value={this.state.value} onChange={this.changeValue} />
+          <input type="text" value={this.state.name} onChange={this.changeValue}  name="name"/>
+          <input type="email" value={this.state.email}  onChange={this.changeValue} name="email"/>
+          <input type="text"  value={this.state.passcode} onChange={this.changeValue} name="passcode"/>
+          <input type="submit" name="" id="" />
 
         </form>
     )
