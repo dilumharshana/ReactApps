@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 
-function Item(props){
-    return <li>{props.item}</li>
+function BoilingVerdict(props){
+
+  if(props.celcious >= 100){
+    return <p>'water boiled'</p>;
+  }
+
+  return <p>'still water not boiled'</p>;
+
 }
+  
 
 
-export default Item;
+export default BoilingVerdict;

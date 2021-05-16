@@ -1,49 +1,87 @@
 import React, { Component, Fragment } from "react";
-import Item from "./test2";
+import BoilingVerdict from "./test2";
 
-class Form extends React.Component{
+class Calculator  extends React.Component{
 
-    constructor(props){
+  constructor(props){
+    super(props);
 
-      super(props);
+      this.state ={scale:'' , tempreture:''}
 
-        this.state = {name:'' , email:'', passcode:''};
-
-        this.submit = this.submit.bind(this);
-        this.changeValue = this.changeValue.bind(this);
-      }
-    
-
-      changeValue(event){
-
-        const name = event.target.name;
-        this.setState( {[name]:event.target.value})
-      }
-
-    submit(){
-
-      const br = <br />
-      alert(`Hello ${this.state.name} ,  your email is ${this.state.email} and remember your passcode is ${this.state.passcode}`);
-    }
-
-
-  render(){
-    return(
-
-        <form action="" onSubmit={this.submit}>
-
-          <label htmlFor="">
-            User Name:
-          </label>
-
-          <input type="text" value={this.state.name} onChange={this.changeValue}  name="name"/>
-          <input type="email" value={this.state.email}  onChange={this.changeValue} name="email"/>
-          <input type="text"  value={this.state.passcode} onChange={this.changeValue} name="passcode"/>
-          <input type="submit" name="" id="" />
-
-        </form>
-    )
+      this.cChange = this.cChange.bind(this);
+      this.fChange = this.fChange.bind(this);
   }
 
+  cChange(tempreture){
+    this.setState( {scale:'c' , tempreture})
+  }
+
+  fChange(tempreture){
+    this.setState( {scale:'f' , tempreture})
+  }
+
+  render(){
+
+    const celcious = this.state.scale == 'f'? trytoconvert(this.state.tempreture , f2c):this.state.tempreture;
+    const feranhite = this.state.scale == 'c'? trytoconvert(this.state.tempreture , c2f) : this.setState.tempreture;
+    return(
+      <div>
+        <TemperatureInput scale='c' tempreture={celcious} onTempretureChange={this.cChange}/>
+        <TemperatureInput scale='f' tempreture={feranhite} onTempretureChange={this.fChange}/>
+
+      </div>
+    )
+  }
+  
 }
-export default Form;
+
+
+
+
+const scale ={
+  c:'celcious',
+  f:'feranhite'
+}
+
+class TemperatureInput  extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {tempreture:''}
+    this.change = this.change.bind(this);
+  }
+
+  change(e){
+    this.props.onTempretureChange(e.target.value);
+  }
+
+  render(){
+    return (
+      <fieldset>
+        <legend>Enter tempreture in {scale[this.props.scale]} :</legend>
+        <input type="text" value={this.props.tempreture} onChange={this.change} />
+        <BoilingVerdict celcious={this.props.tempreture}/>
+      </fieldset>
+    )
+  }
+}
+
+
+function f2c(value){
+  return (value -32)*5/9;
+}
+
+function c2f(value){
+  return (value*5/9)+32;
+}
+
+function trytoconvert(tempreture , convert){
+
+  if(tempreture.isNan){
+    return '';
+  }
+
+  const output = convert(tempreture);
+  return output;
+}
+
+export default Calculator;
