@@ -1,87 +1,49 @@
 import React, { Component, Fragment } from "react";
-import BoilingVerdict from "./test2";
+import InputTemp from "./input";
 
-class Calculator  extends React.Component{
 
-  constructor(props){
+class Calculator extends Component {
+  constructor(props) {
     super(props);
+    this.state = { tempretur: '' , Symbol:''};
 
-      this.state ={scale:'' , tempreture:''}
-
-      this.cChange = this.cChange.bind(this);
-      this.fChange = this.fChange.bind(this);
+    this.changeC = this.changeC.bind(this);
+    this.changeF = this.changeF.bind(this);
   }
 
-  cChange(tempreture){
-    this.setState( {scale:'c' , tempreture})
+  changeC(value) {
+    this.setState({ tempretur: value, symbol:'c' });
+    console.log(value);
   }
 
-  fChange(tempreture){
-    this.setState( {scale:'f' , tempreture})
+  changeF(value){
+    this.setState({tempretur:value , symbol:'f'});
+    console.log('ferenhite');
   }
 
-  render(){
+  render() {
 
-    const celcious = this.state.scale == 'f'? trytoconvert(this.state.tempreture , f2c):this.state.tempreture;
-    const feranhite = this.state.scale == 'c'? trytoconvert(this.state.tempreture , c2f) : this.setState.tempreture;
-    return(
-      <div>
-        <TemperatureInput scale='c' tempreture={celcious} onTempretureChange={this.cChange}/>
-        <TemperatureInput scale='f' tempreture={feranhite} onTempretureChange={this.fChange}/>
+    const celcious = this.state.symbol =='f' ? f2c(this.state.tempretur) : this.state.tempretur;
+    const ferenhite = this.state.symbol == 'c' ? c2f(this.state.tempretur) : this.state.tempretur;
 
-      </div>
-    )
-  }
-  
-}
-
-
-
-
-const scale ={
-  c:'celcious',
-  f:'feranhite'
-}
-
-class TemperatureInput  extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {tempreture:''}
-    this.change = this.change.bind(this);
-  }
-
-  change(e){
-    this.props.onTempretureChange(e.target.value);
-  }
-
-  render(){
     return (
-      <fieldset>
-        <legend>Enter tempreture in {scale[this.props.scale]} :</legend>
-        <input type="text" value={this.props.tempreture} onChange={this.change} />
-        <BoilingVerdict celcious={this.props.tempreture}/>
-      </fieldset>
-    )
+      <React.Fragment>
+
+        <InputTemp tempretur={celcious} tempChange={this.changeC} />
+        <InputTemp tempretur={ferenhite} tempChange={this.changeF} />
+
+      </React.Fragment>
+    );
   }
 }
 
-
-function f2c(value){
-  return (value -32)*5/9;
+function c2f(temp){
+  return (temp-32)*5/9;
 }
 
-function c2f(value){
-  return (value*5/9)+32;
+function f2c(temp){
+  return (temp*5/9)+32
 }
 
-function trytoconvert(tempreture , convert){
-
-  if(tempreture.isNan){
-    return '';
-  }
-
-  const output = convert(tempreture);
-  return output;
-}
 
 export default Calculator;

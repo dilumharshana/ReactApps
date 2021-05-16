@@ -1,14 +1,21 @@
 import React, { Component } from "react";
 
-function BoilingVerdict(props){
+class BoilingVerdict extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {  }
+    }
+    render() {
 
-  if(props.celcious >= 100){
-    return <p>'water boiled'</p>;
-  }
+        if(this.props >=100){
+            return <p>water boiled</p>
+        }
 
-  return <p>'still water not boiled'</p>;
-
+            return <p>water not boiled still</p>
+    }
 }
+ 
+export default BoilingVerdict;
   
 
 
