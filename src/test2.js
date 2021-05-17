@@ -1,22 +1,16 @@
 import React, { Component } from "react";
 
-class BoilingVerdict extends Component {
+class Chat extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
     render() {
 
-        if(this.props >=100){
-            return <p>water boiled</p>
-        }
-
-            return <p>water not boiled still</p>
+       return <h1>chat</h1>
     }
 }
  
-export default BoilingVerdict;
+export default Chat;
   
 
-
-export default BoilingVerdict;

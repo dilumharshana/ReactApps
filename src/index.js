@@ -3,23 +3,13 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Calculator from "./test";
+import Welcome from "./test";
 // import Test2 from "./test2";
 
 
 ReactDOM.render(
   <App>
-    <Router>
-      <Switch>
-        <React.Fragment>
 
-          <div>
-            <Calculator/>
-          </div>
-
-        </React.Fragment>
-      </Switch>
-    </Router>
   </App>,
   document.getElementById("root")
 );
