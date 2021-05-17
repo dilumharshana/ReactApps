@@ -1,19 +1,14 @@
 import React from "react";
 // import boil from './test';
 
-let WelcomeNote = (props)=>{
-  
-return(
-  <div>
-    <div>
-      {props.left}
-    </div>
-    <div>
-      {props.right}
-    </div>
-  </div>
-)
-
+class Dialog extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {  }
+  }
+  render() { 
+    return ( this.props.children ) ;
+  }
 }
-
-export default WelcomeNote;
+ 
+export default Dialog;

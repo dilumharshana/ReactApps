@@ -1,14 +1,12 @@
 import React from 'react';
 import "./App.css";
-import Chat from './test2'
-import Contact from './test'
-import WelcomeNote from './input'
+import WelcomeNote from './test'
 
 class App extends React.Component {
 
   render() {
     return (
-      <WelcomeNote left={<Chat/>}  right={<Contact/>}/>
+      <WelcomeNote title="ReactJS"  time="8.00 PM"/>
     )
     ;
   }

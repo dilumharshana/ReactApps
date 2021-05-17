@@ -1,12 +1,21 @@
-import React from 'react';
-import WelcomeNote from './input.jsx'
+import React from "react";
+import Dialog from "./input.jsx";
 
-let Contact = (props)=>{
+class WelcomeNote extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-    return(
-      <h2>0766324349</h2>
-    )
+  render() {
+    return (
+      <Dialog>
+        <div>
+          <h1>{this.props.title}</h1>
+          <p>{this.props.time}</p>
+        </div>
+      </Dialog>
+    );
+  }
+}
 
-};
-
-export default Contact;
+export default WelcomeNote;
