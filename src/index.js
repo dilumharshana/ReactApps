@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Welcome from "./test";
-// import Test2 from "./test2";
+import Task from './input';
 
 
 ReactDOM.render(
-  <App/>,
+  <App>
+    <Task/>
+  </App>,
   document.getElementById("root")
 );
 
