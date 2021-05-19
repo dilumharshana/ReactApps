@@ -9,6 +9,7 @@ class Task extends React.Component{
         this.state = {list:''}
 
         this.add = this.add.bind(this);
+        this.submit = this.submit.add(this);
     }
 
     add(e){
@@ -17,10 +18,14 @@ class Task extends React.Component{
         this.setState({list : e.target.value})
     }
 
+    submit(){
+
+    }
+
   render(){
       return(
           <div>
-              <form action="">
+              <form action="" onSubmit={this.submit}>
                   <input type="text" value={this.state.list} onChange={this.add} />
                   <input type="submit" value="ADD Task" />
               </form>
