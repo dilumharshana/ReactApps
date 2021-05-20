@@ -1,5 +1,6 @@
 import React from 'react';
 import Todos from './Todos';
+import Form from './form';
 
 class Task extends React.Component{
 
@@ -8,28 +9,17 @@ class Task extends React.Component{
 
         this.state = {list:''}
 
-        this.add = this.add.bind(this);
-        this.submit = this.submit.add(this);
+        this.change = this.change.bind(this);
     }
 
-    add(e){
-        
-        const num = this.state.list.length;
-        this.setState({list : e.target.value})
-    }
-
-    submit(){
-
+    change(e){
+        this.setState({list:e})
     }
 
   render(){
       return(
           <div>
-              <form action="" onSubmit={this.submit}>
-                  <input type="text" value={this.state.list} onChange={this.add} />
-                  <input type="submit" value="ADD Task" />
-              </form>
-
+              <Form change={this.change}/>
               <Todos task={this.state.list}/>
           </div>
       )
