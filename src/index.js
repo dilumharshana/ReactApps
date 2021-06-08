@@ -1,14 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
+import './index.css'
 import App from "./App";
+import Header from "./components/Header/Header";
+import Ulist from './components/list/Ulist';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Task from './input';
+
 
 
 ReactDOM.render(
   <App>
-    <Task/>
+    <div>
+    <Header title  = "Hello React , I am Dilum Harshana"/>
+    <Ulist/>
+    </div>
   </App>,
   document.getElementById("root")
 );
