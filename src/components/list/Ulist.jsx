@@ -1,7 +1,9 @@
+import moment from "moment";
 import React from "react";
 
 import Items from "../listitems/Items";
-import "./ul.css";
+import '../../css2/'
+
 
 var list = () => {
   var object = [
@@ -39,7 +41,7 @@ var list = () => {
       cell: "081-454-0666",
       id: {
         name: "PPS",
-        value: "0390511T",
+        value: "0390dd511T",
       },
       picture: {
         large: "https://randomuser.me/api/portraits/men/75.jpg",
@@ -125,7 +127,7 @@ var list = () => {
       cell: "081-454-0666",
       id: {
         name: "PPS",
-        value: "0390511T",
+        value: "039051f1T",
       },
       picture: {
         large: "https://randomuser.me/api/portraits/men/75.jpg",
@@ -135,22 +137,33 @@ var list = () => {
     },
   ];
 
-  const person = () => {
-    return object.map((obj) => {
-      return (
-        <Items
-          name={obj.name.first}
-          email={obj.email}
-          phone={obj.phone}
-          image={obj.picture.medium}
-        />
-      );
-    });
+  //generating person ----------------------------------
+
+  let generatePerson = () => {
+    return (
+      <div className="container">
+        <ul>
+          {object.map((person) => {
+            return (
+              <Items
+                key={person.id.value}
+                id={person.id.value}
+                name={`${person.name.title}. ${person.name.first} ${person.name.last}`}
+                email={person.email}
+                phone={person.phone}
+                DOB={moment(person.dob.date).format("DD-MMMM-YYYY")}
+                src={person.picture.medium}
+              />
+            );
+          })}
+        </ul>
+      </div>
+    );
   };
 
-  return (
-    person()
-    )
+  // ---------------------------------------------------
+
+  return generatePerson();
 };
 
 export default list;

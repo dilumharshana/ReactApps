@@ -1,15 +1,20 @@
 import React from "react";
-import "./items.css";
-import moment from 'moment';
+import moment from "moment";
+import './items.css'
 
 var Items = (props) => {
   return (
-    <ul>
-      <li> <img src={props.image} width="60px" height="60px" alt="" /> Name : {props.name}</li>
-      <li>Email : {props.email}</li>
-      <li>Phone : {props.phone}</li>
-      <li>DOB : {moment(props.dob).format('DD-YYYY-MM')} </li>
-    </ul>
+    <li>
+      <p className="personName">
+        <img src={props.image} width="60px" height="60px" alt={props.name} /> Name :{" "}
+        {props.name}
+      </p>
+
+      <p>Email : {props.email}</p>
+      <p>Phone : {props.phone}</p>
+      <p>DOB : {moment(props.dob).format("DD-YYYY-MM")} </p>
+      <p>ID : {props.id} </p>
+    </li>
   );
 };
 
