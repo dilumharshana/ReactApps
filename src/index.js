@@ -3,16 +3,20 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import App from "./App";
+
+//components --------------------------
 import Header from "./components/Header/Header";
 import Ulist from "./components/list/Ulist";
+import Todo from './components/Todo/Todo'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
   <App>
     <div>
-      <Header title="Hello React , I am Dilum Harshana" />
+      <Header /> 
       <Ulist />
+      <Todo/>
     </div>
   </App>,
   document.getElementById("root")

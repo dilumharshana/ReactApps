@@ -2,8 +2,7 @@ import moment from "moment";
 import React from "react";
 
 import Items from "../listitems/Items";
-import '../../css2/'
-
+import "bootstrap/dist/css/bootstrap.css";
 
 var list = () => {
   var object = [
@@ -141,21 +140,25 @@ var list = () => {
 
   let generatePerson = () => {
     return (
-      <div className="container">
-        <ul>
-          {object.map((person) => {
-            return (
-              <Items
-                key={person.id.value}
-                id={person.id.value}
-                name={`${person.name.title}. ${person.name.first} ${person.name.last}`}
-                email={person.email}
-                phone={person.phone}
-                DOB={moment(person.dob.date).format("DD-MMMM-YYYY")}
-                src={person.picture.medium}
-              />
-            );
-          })}
+      <div className="container ">
+        <ul className="mt-4">
+          <div className="row align-items-center">
+            {object.map((person) => {
+              return (
+                <div className="col-lg-4 col-md-3 border">
+                  <Items
+                    key={person.id.value}
+                    id={person.id.value}
+                    name={`${person.name.title}. ${person.name.first} ${person.name.last}`}
+                    email={person.email}
+                    phone={person.phone}
+                    DOB={moment(person.dob.date).format("DD-MMMM-YYYY")}
+                    src={person.picture.medium}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </ul>
       </div>
     );
