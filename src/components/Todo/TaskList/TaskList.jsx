@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TaskList(props) {
+export const TaskList = (props) => {
   return (
     <div className="mt-3">
       <ul>

@@ -2,7 +2,7 @@ import React, { useState , Component } from "react";
 
 //components----------------
 import TaskInput from './taskinput/TaskInput';
-import TaskList from './TaskList/TaskList'
+import {TaskList} from './TaskList/TaskList'
 import "./Todo.css";
 
 class Todo extends Component {
