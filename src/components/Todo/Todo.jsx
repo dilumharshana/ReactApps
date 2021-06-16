@@ -1,4 +1,4 @@
-import React, { useState , Component } from "react";
+import React, { Component } from "react";
 
 //components----------------
 import TaskInput from './taskinput/TaskInput';

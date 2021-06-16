@@ -10,7 +10,7 @@ const Items = (props) => {
   return (
     <li className="mb-4">
       <p className="personName">
-        <img src={picture.medium} width="60px" height="60px" alt={name.first} />{" "}
+        <img src={picture} width="60px" height="60px" alt={name.first} />{" "}
         Name : {name.first}
       </p>
 

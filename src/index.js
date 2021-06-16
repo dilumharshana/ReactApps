@@ -8,15 +8,18 @@ import App from "./App";
 import Header from "./components/Header/Header";
 import Ulist from "./components/list/Ulist";
 import Todo from './components/Todo/Todo'
+import {Hooktester} from './components/hooks/hooks';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
   <App>
     <div>
-      <Header /> 
+
+      <Hooktester p="testing prop"/>
+      {/* <Header /> 
       <Ulist />
-      <Todo/>
+      <Todo/> */}
     </div>
   </App>,
   document.getElementById("root")
