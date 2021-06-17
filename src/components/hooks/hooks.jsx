@@ -1,30 +1,14 @@
-import React, { useState, useEffect , Component } from "react";
+import React , {useState , useEffect} from'react'
 
-export const Hooktester = (props)=>{
+export const Hooktester = () => {
 
-    const[ title , setTitle ] = useState('');
+    const[color , setColor] = useState('white');
 
-    useEffect( ()=>{
-        console.log(props.p);
-        return console.log("say bye i am un mounting");
-    })
-    
-    useEffect( ()=> document.title = title);
+    useEffect( ()=> document.body.style.backgroundColor = color )
 
-    const changeTitleStatus = () => {
-        document.title = title;
-    }
-
-    const titles = ["hello" , "react" , "titles"];
-        
     
 
     return(
-        <div>
-            <input type="text" value={title} onChange={ (event)=> setTitle(event.target.value)}/>
-            <button onClick={changeTitleStatus}>Click to change title</button>
-        </div>
+        <button onClick={() =>setColor(color => 'black') }>click to darkmode</button>
     )
 }
-
-
