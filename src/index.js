@@ -5,25 +5,19 @@ import "./index.css";
 import App from "./App";
 
 //components --------------------------
-import Header from "./components/Header/Header";
-import Ulist from "./components/list/Ulist";
-import Todo from './components/Todo/Todo'
-import {Hooktester} from './components/hooks/hooks';
+import {FriendStateSHhow} from './components/friends/friendState'
+import {Capture} from './components/friends/cpature'
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-ReactDOM.render(
+  ReactDOM.render(
   <App>
     <div>
-
-      <Hooktester p="testing prop"/>
-      {/* <Header /> 
-      <Ulist />
-      <Todo/> */}
+      {/* <FriendStateSHhow id ={Math.random()} heading={() => <h1>Seems like render props code shared</h1> }/> */}
+      <Capture/>
     </div>
   </App>,
   document.getElementById("root")
-);
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
