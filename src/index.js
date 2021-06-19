@@ -5,19 +5,15 @@ import "./index.css";
 import App from "./App";
 
 //components --------------------------
-import {FriendStateSHhow} from './components/friends/friendState'
-import {Capture} from './components/friends/cpature'
 
+import { Cart } from "./components/shoping cart/cart";
 
-  ReactDOM.render(
+ReactDOM.render(
   <App>
-    <div>
-      {/* <FriendStateSHhow id ={Math.random()} heading={() => <h1>Seems like render props code shared</h1> }/> */}
-      <Capture/>
-    </div>
+    <Cart />
   </App>,
   document.getElementById("root")
-)
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
