@@ -6,11 +6,11 @@ import App from "./App";
 
 //components --------------------------
 
-import { Cart } from "./components/shoping cart/cart";
+import { Navbar } from "./components/navbar/navbar";
 
 ReactDOM.render(
   <App>
-    <Cart />
+    <Navbar />
   </App>,
   document.getElementById("root")
 );
