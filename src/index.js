@@ -6,14 +6,7 @@ import App from "./App";
 
 //components --------------------------
 
-import { Navbar } from "./components/navbar/navbar";
-
-ReactDOM.render(
-  <App>
-    <Navbar />
-  </App>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App></App>, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
