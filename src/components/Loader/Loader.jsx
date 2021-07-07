@@ -1,22 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { PostLoader } from "../PostLoder/PostLoader";
-import "bootstrap/dist/css/bootstrap.css";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { loadPosts } from "../../actions/postsLoad";
 
-export const Loader = () => {
-  const [load, serLoad] = useState([]);
-  return (
-    <>
-      <button
-        className="m-5"
-        onClick={(e) => {
-          serLoad([...load, `i am a new element ${Math.random()}`]);
-        }}
-      >
-        Click to load
-      </button>
-
-      <PostLoader list={load} />
-    </>
-  );
+export const Button = (props) => {
+  return <button>Click to Load</button>;
 };

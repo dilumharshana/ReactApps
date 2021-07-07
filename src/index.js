@@ -7,12 +7,12 @@ import App from "./App";
 
 //------------components----------------
 
-import { Loader } from "./components/Loader/Loader";
+import { Button } from "./components/loader/loader";
 
 ReactDOM.render(
   <App>
     <div className="container">
-      <Loader />
+      <Button />
     </div>
   </App>,
   document.getElementById("root")
