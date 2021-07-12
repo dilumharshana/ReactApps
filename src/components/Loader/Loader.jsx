@@ -1,9 +1,14 @@
 import React from "react";
+import { compose, pipe } from "lodash/fp";
 
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import { loadPosts } from "../../actions/postsLoad";
+const trim = (str) => str.trim();
+const touppercase = (str) => str.toUpperCase();
+const wrap = (type) => (str) => `<${type}>${str}</${type}>`;
 
-export const Button = (props) => {
-  return <button>Click to Load</button>;
-};
+const person = { name: "dilum", age: { number: 23 } };
+const man = { ...person, age: { number: 22 } };
+
+console.log(person);
+console.log(man);
+
+export const Button = document.write(<p>hello</p>);
