@@ -4,17 +4,21 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import App from "./App";
+import { provider } from "react-redux";
+import { store } from "./store";
 
 //------------components----------------
 
-import { Button } from "./components/loader/loader";
+import Button from "./components/loader/loader";
 
 ReactDOM.render(
-  <App>
-    <div className="container">
-      <Button />
-    </div>
-  </App>,
+  <provider store={store}>
+    <App>
+      <div className="container">
+        <Button />
+      </div>
+    </App>
+  </provider>,
   document.getElementById("root")
 );
 

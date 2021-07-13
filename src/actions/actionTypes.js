@@ -1,0 +1,1 @@
+export const BASE_POST_LOADED = "BASE_POST_LOADED";

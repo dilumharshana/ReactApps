@@ -1,14 +1,15 @@
+//i am going to use thecreated action from here
+
 import React from "react";
-import { compose, pipe } from "lodash/fp";
+import { getPosts } from "../../actions/postLoad";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
-const trim = (str) => str.trim();
-const touppercase = (str) => str.toUpperCase();
-const wrap = (type) => (str) => `<${type}>${str}</${type}>`;
+const matchDispatchToProps = (dispatch) =>
+  bindActionCreators({ getposts: getPosts }, dispatch);
 
-const person = { name: "dilum", age: { number: 23 } };
-const man = { ...person, age: { number: 22 } };
+const Button = (props) => (
+  <button onClick={() => props.getposts()}>Click to load posts</button>
+);
 
-console.log(person);
-console.log(man);
-
-export const Button = document.write(<p>hello</p>);
+export default connect(matchDispatchToProps)(Button);
