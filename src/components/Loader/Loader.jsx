@@ -1,15 +1,23 @@
 //i am going to use thecreated action from here
 
 import React from "react";
-import { getPosts } from "../../actions/postLoad";
+
+import { fetchPosts } from "../../actions/loadPosts";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-const matchDispatchToProps = (dispatch) =>
-  bindActionCreators({ getposts: getPosts }, dispatch);
+class Button extends React.Component {
+  render() {
+    return (
+      <button onClick={() => this.props.fetchPosts()}>
+        Click to load posts
+      </button>
+    );
+  }
+}
 
-const Button = (props) => (
-  <button onClick={() => props.getposts()}>Click to load posts</button>
-);
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchPosts: fetchPosts }, dispatch);
+}
 
-export default connect(matchDispatchToProps)(Button);
+export default connect(null, matchDispatchToProps)(Button);

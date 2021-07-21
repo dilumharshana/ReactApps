@@ -4,21 +4,24 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import App from "./App";
-import { provider } from "react-redux";
-import { store } from "./store";
+import { Provider } from "react-redux";
 
 //------------components----------------
 
 import Button from "./components/loader/loader";
+import PostList from "./components/Postlist/Postlist";
+import store from "./store";
+import Postlist from "./components/Postlist/Postlist";
 
 ReactDOM.render(
-  <provider store={store}>
+  <Provider store={store}>
     <App>
       <div className="container">
         <Button />
+        <Postlist />
       </div>
     </App>
-  </provider>,
+  </Provider>,
   document.getElementById("root")
 );
 
