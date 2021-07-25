@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import postReducer from "../../reducers/postReducer";
 
 const PostList = (props) => {
   if (props.postReducer) {
