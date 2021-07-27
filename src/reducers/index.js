@@ -3,8 +3,8 @@ import postReducer from "./postReducer";
 import { postSelected } from "./postSelected";
 
 const root = combineReducers({
-  postReducer,
-  postSelected,
+  posts: postReducer,
+  selectedPost: postSelected,
 });
 
 export default root;

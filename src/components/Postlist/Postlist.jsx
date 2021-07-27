@@ -1,24 +1,31 @@
 import React from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { seletedPost } from "../../actions/showPost";
 
 const PostList = (props) => {
-  if (props.postReducer) {
+  if (props.Post) {
     return (
       <ul>
-        {props.postReducer.map((post) => {
-          return <li key={post.id}>{post.des}</li>;
+        {props.Post.map((post) => {
+          return (
+            <li key={post.id} onClick={props.zoompost(post.des)}>
+              {post.des}
+            </li>
+          );
         })}
       </ul>
     );
   }
 
-  return <h2>Please click the button</h2>;
+  return <p>Please click the button</p>;
 };
 
-function mapStateToProps(state) {
-  return {
-    postReducer: state.postReducer,
-  };
-}
+const mapStateToProps = (store) => ({
+  Post: store.posts,
+});
 
-export default connect(mapStateToProps)(PostList);
+const mapActionToProps = (dispatch) =>
+  bindActionCreators({ zoompost: seletedPost }, dispatch);
+
+export default connect(mapStateToProps, mapActionToProps)(PostList);

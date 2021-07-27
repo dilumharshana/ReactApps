@@ -9,7 +9,12 @@ import { connect } from "react-redux";
 class Button extends React.Component {
   render() {
     return (
-      <button onClick={() => this.props.fetchPosts()}>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          this.props.fetchPosts();
+        }}
+      >
         Click to load posts
       </button>
     );

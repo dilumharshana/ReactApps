@@ -5,8 +5,8 @@ export const fetchPosts = () => {
     type: Button_clicked,
     payload: [
       { id: 1, des: "data 1" },
-      { id: 1, des: "data 1" },
-      { id: 1, des: "data 1" },
+      { id: 1, des: "data 2" },
+      { id: 1, des: "data 3" },
     ],
   };
 };

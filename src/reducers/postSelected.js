@@ -5,6 +5,5 @@ export const postSelected = (state = null, action) => {
     case Post_Selected:
       return action.payload;
   }
-
   return state;
 };

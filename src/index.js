@@ -12,6 +12,7 @@ import Button from "./components/loader/loader";
 import PostList from "./components/Postlist/Postlist";
 import store from "./store";
 import Postlist from "./components/Postlist/Postlist";
+import ZoomText from "./components/zoom";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -19,6 +20,7 @@ ReactDOM.render(
       <div className="container">
         <Button />
         <Postlist />
+        <ZoomText />
       </div>
     </App>
   </Provider>,
